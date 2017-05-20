@@ -65,6 +65,28 @@ html
 ```
 
 
+### 5 Custom Validation with Parameters
+```
+function myCus(param:any):ValidatorFn{
+return (c:AbstractControl):{[key:string]:boolean}|null =>{
+  if(){
+  }
+  return null;
+}
+```
+use
+```
+import {AbstractControl,ValidatorFn} from'@angular/forms';
+function ratingRange(min:number,max:number):ValidatorFn{
+  return (c:AbstractControl):{[key:string]:boolean}|null =>{
+  if(c.value!=undefined && (isNaN(c.value)|| c.value<1||c.value>5)){
+    return {'range':true}
+  };
+  return null;
+};
+}
+```
+
 
 ## 9. Create, Read, Update, and Delete (CRUD) Using HTTP
 ### 4 Faking a Backend Server
