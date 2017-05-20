@@ -9,6 +9,10 @@ visited - touched untouched
 
 
 ## 5. Validation
+personal note:
+```
+formGroupName formControlName
+```
 ### 2 Setting Built-in Validation Rules
 ```
 this.customerForm = this.fb.group({
