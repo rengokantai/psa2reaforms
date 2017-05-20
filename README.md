@@ -112,7 +112,26 @@ html (two syntax)
 ```
 
 ### 7  Cross-field Validation: Custom Validator
-
+```
+function dataCompare(c:AbstractControl):{[key:string]:boolean}|null{
+  let startControl = c.get('start');
+  let endControl = c.get('end');
+  if(startControl.value!==endControl.value){
+    return{'match':true};
+  }
+  return null;
+}
+```
+```
+thie.customForm = this.fb.group({
+  firstName:['',[Validators.required,Validators.minLength(3)]],
+  lastName:['',[Validators.required,Validators.minLength(3)]],
+  availablity:this.fb.group({
+    start:['',Validators.required],
+    end:['',Validators.required]
+  },{validator.dateCompare})
+})
+```
 
 
 ## 9. Create, Read, Update, and Delete (CRUD) Using HTTP
