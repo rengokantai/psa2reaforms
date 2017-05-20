@@ -116,10 +116,14 @@ html (two syntax)
 function dataCompare(c:AbstractControl):{[key:string]:boolean}|null{
   let startControl = c.get('start');
   let endControl = c.get('end');
-  if(startControl.value!==endControl.value){
-    return{'match':true};
+  // add at 2:25
+  if(emailControl.pristine|| confirmControl.pristine){
+    return null;
   }
-  return null;
+  if(startControl.value===endControl.value){
+    return null;
+  }
+  return {'match':true};
 }
 ```
 ```
