@@ -31,8 +31,25 @@ setNotification(notifyVia:string): void{
 }
 ```
 
+### 4 Custom Validators
+```
+function myCus(c:AbstractControl):{[key:string]:boolean}|null{
+  if(){
+  }
+}
+```
 
-
+#### 03:10
+actual:
+```
+import {FormGroup,FormBuilder,Validators,AbstractControl} from'@angular/forms';
+function ratingRange(c:AbstractControl):{[keyy:string]:boolean}|null{
+  if(c.value!=undefined && (isNaN(c.value)|| c.value<1||c.value>5)){
+    return {'range':true}
+  };
+  return null;
+}
+```
 
 
 ## 9. Create, Read, Update, and Delete (CRUD) Using HTTP
