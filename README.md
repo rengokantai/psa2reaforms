@@ -88,6 +88,33 @@ function ratingRange(min:number,max:number):ValidatorFn{
 ```
 
 
+
+```
+ngOnInit():void{
+  this.customerForm = this.fb.group({
+    rating:['',ratingRange(1,4)]
+  })
+}
+```
+
+### 6 Cross-Field Validation: Nested FormGroup
+```
+<div formGroupName="emailGroup">
+  <div class="form-group">
+  </div>
+  <div class="form-group">
+  </div>
+</div>
+```
+html (two syntax)
+```
+<span class="" *ngIf="(customerForm.controls.emailGroup.controls.email.touched || sustomerFrom.get('emailGroup.email').dirty)&& customerForm.get('emailGroup.email').errors">
+```
+
+### 7  Cross-field Validation: Custom Validator
+
+
+
 ## 9. Create, Read, Update, and Delete (CRUD) Using HTTP
 ### 4 Faking a Backend Server
 ```
