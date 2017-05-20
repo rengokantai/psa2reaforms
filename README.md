@@ -43,13 +43,27 @@ function myCus(c:AbstractControl):{[key:string]:boolean}|null{
 actual:
 ```
 import {FormGroup,FormBuilder,Validators,AbstractControl} from'@angular/forms';
-function ratingRange(c:AbstractControl):{[keyy:string]:boolean}|null{
+function ratingRange(c:AbstractControl):{[key:string]:boolean}|null{
   if(c.value!=undefined && (isNaN(c.value)|| c.value<1||c.value>5)){
     return {'range':true}
   };
   return null;
 }
 ```
+
+```
+ngOnInit():void{
+  this.customerForm = this.fb.group({
+    rating:['',ratingRange]
+  })
+}
+```
+
+html
+```
+<span class="" *ngIf="(customerForm.get('rating').touched || sustomerFrom.get('rating').dirty)&& customerForm.get('rating').errors">
+```
+
 
 
 ## 9. Create, Read, Update, and Delete (CRUD) Using HTTP
