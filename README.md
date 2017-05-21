@@ -140,6 +140,13 @@ thie.customForm = this.fb.group({
   },{validator.dateCompare})
 })
 ```
+## 6.Reacting to Changes 
+### 1 Introduction
+### 2 Watching
+```
+this.myFC.valueChanges.subscribe(value=>console.log(vaule));
+```
+
 
 
 ## 9. Create, Read, Update, and Delete (CRUD) Using HTTP
