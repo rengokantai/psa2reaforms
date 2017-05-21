@@ -158,6 +158,28 @@ setMessage(c: AbstractControl):void{
 }
 ```
 
+### 5 Reactive Transformations
+```
+throttleTime
+distinctUntilChanged
+```
+example
+```
+import 'rxjs/add/operator/debounceTime'
+```
+```
+emailControl.valueChanges.debounceTime(1000).subscribe(value=>this.setMessage(emailControl));
+```
+
+## 7. Dynamically Duplicate Input Elements
+### 6 Create a FormArray
+two ways
+```
+this.myArr = new FormArray([]);
+this.myArr=this.fb.array([]);
+```
+
+
 
 
 ## 9. Create, Read, Update, and Delete (CRUD) Using HTTP
