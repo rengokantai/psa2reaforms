@@ -178,7 +178,34 @@ two ways
 this.myArr = new FormArray([]);
 this.myArr=this.fb.array([]);
 ```
+#### 2:52
+```
+get address(): FormArray{
+  return <FormArray>this.customerForm.get('address');
+}
+```
+```
+<div formArrayName="addresses" *ngFor="let address of addresses.controls;let i=index">
+  <div [formGroupName]="i">
+  </div>
+</div>
+```
 
+### 7 Loop Through the FormArray
+```
+<div formArrayName="addresses" *ngFor="let address of addresses.controls;let i=index">
+  <div [formGroupName]="i">
+  </div>
+</div>
+```
+in html
+```
+<label class="" attr.for="{{'streetId' +i}}"> street address</label>
+<input id="{{'street1Id'+i}}" fromControlName="street1">
+```
+
+### 8 Duplicate the Input Elements
+stop at 1:00
 
 
 
