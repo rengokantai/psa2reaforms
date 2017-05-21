@@ -147,6 +147,17 @@ thie.customForm = this.fb.group({
 this.myFC.valueChanges.subscribe(value=>console.log(vaule));
 ```
 
+### 4 Reacting: Displaying Validation Messages
+```
+setMessage(c: AbstractControl):void{
+  this.emailMessage ='';
+  if((c.touched||c.dirty) && c.errors){
+    this.emailMesage = Object.keys(c.errors).map(key=>
+      this.validationMessage[key]).join(' ');
+  }
+}
+```
+
 
 
 ## 9. Create, Read, Update, and Delete (CRUD) Using HTTP
