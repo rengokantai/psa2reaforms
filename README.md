@@ -207,6 +207,13 @@ in html
 ### 8 Duplicate the Input Elements
 stop at 1:00
 
+## 8. Reactive Form in Context
+
+### 6 Reading a Route Parameter
+stop at 0:22
+
+
+
 
 
 ## 9. Create, Read, Update, and Delete (CRUD) Using HTTP
