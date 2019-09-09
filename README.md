@@ -225,3 +225,11 @@ in package.json
 ```
 'angular-in-memory-web-api':'npm:angular-in-memory-web-api/bundles/in-memory-web-api.umd.js'
 ```
+
+### 8 Saving Edits
+
+|POST|PUT|
+|---|---|
+|Post data for a resource or set of resources|Put data for a specific resource with an Id|
+|Create a new resource when the server assigns the Id| Create a new resource when the client assigns the Id|
+|Update a set of resources|Update the resource with the Id|
